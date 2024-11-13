@@ -32,5 +32,5 @@ jobs:
       run: |
         echo "$EC2_KEY" > key.pem
         chmod 600 key.pem
-        ssh -i key.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST "sudo systemctl restart httpd || sudo systemctl restart nginx"
+        ssh -i key.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST "sudo systemctl restart apache2"
         rm -f key.pem
